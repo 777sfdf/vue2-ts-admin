@@ -1,13 +1,45 @@
 <template>
-    <h2>布局测试页面</h2>
+    
+    <div class="layout">
+        <!-- 左侧布局导航 -->
+    <div class=" menu">
+        <Menu></Menu>
+    </div>
+    <!-- 右侧内容区域 -->
+    <div class="content">
+        <Content></Content>
+    </div>
+    </div>
 </template>
 
 <script>
-
+import Menu  from './menu/index.vue'
+import Content from './content/index.vue'
 export default {
+  components: {
+    Menu,
+    Content
+  }
 
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+.layout{
+    // display: flex;
+    .menu{
+    width: 200px;
+    background: #112f50;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+
+    }
+    .content{
+        // flex: 1;
+        padding-left:200px;
+    }
+}
 </style>

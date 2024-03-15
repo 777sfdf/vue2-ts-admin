@@ -3,12 +3,21 @@ import VueRouter from 'vue-router'
 
 import  layout from '@/views/layout/index.vue'
 import Login from '@/views/login/index.vue'
+import Home from '@/views/home/Home.vue'
 Vue.use(VueRouter)
 
 const routes = [
 {
   path:'/',
   component:layout,
+  children: [
+    {
+      path: '/',
+      name:'home',
+      component: Home
+
+    }
+  ]
 },
 
 {
