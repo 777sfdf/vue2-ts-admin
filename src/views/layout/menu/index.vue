@@ -5,7 +5,7 @@
       class="el-menu-vertical-demo"
       background-color="#112f50"
       text-color="#fff"
-      active-text-color="#ffd04b" router>
+      active-text-color="#ffd04b" router :collapse="isCollapse">
 
       <el-menu-item >
         <span slot="title">生鲜采购后台管理系统</span>
@@ -51,7 +51,14 @@
 </template>
 
 <script>
-
+export default {
+  props: ['isCollapse'],
+  data() {
+    return {
+      // isCollapse: false
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
@@ -63,5 +70,9 @@
         color: #fff !important;        
     }
 }
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
 
 </style>
